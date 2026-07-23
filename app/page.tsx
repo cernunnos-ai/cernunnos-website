@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 const RESEARCH_FORM_URL =
   "https://forms.gle/t7cmvioq3HJsrvuv9";
 
@@ -29,7 +27,7 @@ function CapabilityIcon({ name }: { name: string }) {
       <svg
         aria-hidden="true"
         viewBox="0 0 80 80"
-        className="size-20 text-sprout"
+        className="size-14 text-sprout sm:size-10 lg:size-12"
         fill="none"
       >
         <path
@@ -65,7 +63,7 @@ function CapabilityIcon({ name }: { name: string }) {
       <svg
         aria-hidden="true"
         viewBox="0 0 80 80"
-        className="size-20 text-sprout"
+        className="size-14 text-sprout sm:size-10 lg:size-12"
         fill="none"
       >
         <path
@@ -94,7 +92,7 @@ function CapabilityIcon({ name }: { name: string }) {
     <svg
       aria-hidden="true"
       viewBox="0 0 80 80"
-      className="size-20 text-sprout"
+      className="size-14 text-sprout sm:size-10 lg:size-12"
       fill="none"
     >
       <path
@@ -124,49 +122,86 @@ export default function Home() {
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.74)_0%,rgba(0,0,0,0.5)_46%,rgba(0,0,0,0.14)_100%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_18%,rgba(0,0,0,0),rgba(0,0,0,0.34)_68%),linear-gradient(180deg,rgba(0,0,0,0.08),rgba(0,0,0,0.62))]" />
       <div className="relative min-h-screen">
-        <div className="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-5 sm:px-8 lg:px-12">
-          <header className="flex items-center justify-between py-5 sm:py-6">
-            <Image
-              src="/brand/isologo.png"
-              alt="Cernunnos"
-              width={241}
-              height={60}
-              priority
-              className="h-12 w-auto sm:h-14"
-            />
+        <div className="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-5 sm:h-dvh sm:min-h-0 sm:px-8 lg:px-12">
+          <header className="flex min-h-[23svh] items-end justify-center pb-4 sm:h-[10dvh] sm:min-h-0 sm:items-center sm:pb-0 lg:h-[15dvh] lg:items-end lg:pb-2">
+            <picture className="flex items-center justify-center">
+              <source
+                media="(min-width: 640px)"
+                srcSet="/brand/logo_web_mobile.png"
+              />
+              <img
+                src="/brand/logo_web_mobile.png"
+                alt="Cernunnos"
+                width="416"
+                height="153"
+                fetchPriority="high"
+                className="h-auto w-72 object-contain sm:w-40 lg:w-60"
+              />
+            </picture>
           </header>
 
-          <section className="flex flex-1 flex-col justify-center py-16 sm:py-20 lg:py-24">
-            <div className="max-w-4xl">
-              <p className="mb-8 inline-flex rounded-[1px] border border-sprout/30 bg-sprout/10 px-3 py-2 text-xs font-semibold tracking-[0.18em] text-sprout uppercase">
-                Agricultural Intelligence
-              </p>
-              <h1 className="font-canela max-w-4xl text-5xl leading-[0.98] font-bold tracking-normal text-white sm:text-6xl lg:text-7xl">
-                Conecta el Territorio
-              </h1>
-              <p className="mt-8 max-w-2xl text-lg leading-8 text-white/78 sm:text-xl sm:leading-9">
-                Estamos construyendo una nueva generación de herramientas para
-                observación, diagnóstico y planificación agropecuaria.
-              </p>
-              <a
-                href={RESEARCH_FORM_URL}
-                className="mt-10 inline-flex min-h-14 items-center rounded-[1px] border border-sprout bg-sprout px-6 py-4 text-base font-semibold tracking-[0.04em] text-background transition-colors hover:border-secondary hover:bg-secondary hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sprout"
-              >
-                Participar de la investigación
-              </a>
+          <section className="flex flex-1 flex-col sm:h-[80dvh] sm:flex-none lg:h-[75dvh]">
+            <div className="flex min-h-[77svh] w-full flex-col items-center text-center sm:h-[50dvh] sm:min-h-0 sm:justify-center lg:h-[45dvh] lg:justify-start lg:pt-3">
+              <div className="flex flex-col items-center">
+                <p className="mb-6 inline-flex rounded-[1px] border border-sprout/30 bg-sprout/10 px-3 py-2 text-xs font-semibold tracking-[0.18em] text-sprout uppercase sm:mb-3 sm:px-2.5 sm:py-1.5 sm:text-[0.625rem] lg:mb-8">
+                  Inteligencia agropecuaria
+                </p>
+                <h1 className="font-canela max-w-sm text-[3.78rem] leading-[0.98] font-bold tracking-normal text-white sm:max-w-3xl sm:text-5xl lg:max-w-none lg:text-[4rem] lg:whitespace-nowrap">
+                  <span className="block sm:inline">Conectando</span>{" "}
+                  <span className="block whitespace-nowrap sm:inline">
+                    el territorio
+                  </span>{" "}
+                  <span className="block sm:inline">argentino</span>
+                </h1>
+                <p className="mt-6 max-w-sm text-[1.36rem] leading-8 text-white/78 sm:mt-4 sm:max-w-xl sm:text-base sm:leading-7 lg:mt-8 lg:text-[1.2rem] lg:leading-8">
+                  Estamos construyendo una nueva generación de herramientas
+                  para observación, diagnóstico y planificación agropecuaria.
+                </p>
+              </div>
+              <div className="flex w-full flex-1 flex-col items-center sm:mt-5 sm:w-auto sm:flex-none lg:mt-6">
+                <a
+                  href={RESEARCH_FORM_URL}
+                  className="mt-auto inline-flex min-h-14 w-full items-center justify-center rounded-[1px] border border-sprout bg-sprout px-6 py-3 text-lg font-bold tracking-[0.02em] text-background transition-colors hover:border-secondary hover:bg-secondary hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sprout sm:mt-0 sm:min-h-10 sm:w-auto sm:px-5 sm:py-2 sm:text-sm sm:font-semibold sm:tracking-[0.04em]"
+                >
+                  Participar de la investigación
+                </a>
+                <a
+                  href="#capacidades"
+                  aria-label="Ver capacidades"
+                  className="mt-auto mb-4 inline-flex size-8 items-center justify-center text-white transition-colors hover:text-sprout focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sprout sm:hidden"
+                >
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    className="size-7"
+                    fill="none"
+                  >
+                    <path
+                      d="m5 9 7 7 7-7"
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2.5"
+                    />
+                  </svg>
+                </a>
+              </div>
             </div>
 
-            <div className="mt-16 grid gap-4 sm:grid-cols-3 lg:mt-20">
+            <div
+              id="capacidades"
+              className="mt-8 grid scroll-mt-5 gap-4 pb-10 sm:mt-0 sm:h-[30dvh] sm:grid-cols-3 sm:gap-3 sm:pb-4"
+            >
               {capabilities.map((capability) => (
                 <article
                   key={capability.title}
-                  className="flex min-h-64 flex-col rounded-[1px] border border-white/14 bg-black/18 p-6 sm:p-7"
+                  className="flex min-h-48 flex-col rounded-[1px] border border-white/14 bg-black/18 p-5 sm:min-h-0 sm:items-center sm:justify-center sm:p-4 sm:text-center"
                 >
                   <CapabilityIcon name={capability.icon} />
-                  <h2 className="font-canela mt-8 text-2xl leading-none font-bold text-white">
+                  <h2 className="font-canela mt-5 text-2xl leading-none font-bold text-white sm:mt-3 sm:text-lg">
                     {capability.title}
                   </h2>
-                  <p className="mt-3 max-w-xs text-sm leading-6 text-white/68">
+                  <p className="mt-3 max-w-xs text-sm leading-6 text-white/68 sm:mt-2 sm:text-[0.8125rem] sm:leading-5 lg:text-[0.975rem] lg:leading-6">
                     {capability.description}
                   </p>
                 </article>
@@ -174,9 +209,23 @@ export default function Home() {
             </div>
           </section>
 
-          <footer className="flex flex-col gap-2 border-t border-white/12 py-6 text-sm text-white/62 sm:flex-row sm:items-center sm:justify-between">
-            <p>Research in progress.</p>
-            <p>© Cernunnos AI · Estudio Blanco</p>
+          <footer className="flex flex-col items-center gap-3 border-t border-white/12 py-6 text-center text-sm text-white/62 sm:grid sm:h-[10dvh] sm:grid-cols-3 sm:py-0 sm:text-xs">
+            <p className="inline-flex items-center gap-2 sm:justify-self-start">
+              <span
+                aria-hidden="true"
+                className="size-2 rounded-full bg-[#AB74F7] shadow-[0_0_10px_2px_rgba(171,116,247,0.55)]"
+              />
+              En proceso de desarrollo
+            </p>
+            <a
+              href="https://estudioblanco.org"
+              className="justify-self-center transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sprout"
+            >
+              © Cernunnos AI · Estudio Blanco
+            </a>
+            <p className="sm:justify-self-end">
+              General Madariaga - Buenos Aires - Argentina
+            </p>
           </footer>
         </div>
       </div>
