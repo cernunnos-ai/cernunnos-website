@@ -15,7 +15,36 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Cernunnos AI",
   description:
-    "Inteligencia artificial para observación, diagnóstico y planificación agropecuaria.",
+    "Plataforma de observación, diagnóstico y planificación agropecuaria.",
+  metadataBase: new URL("https://cernunnos.ai"),
+  openGraph: {
+    title: "Cernunnos AI",
+    description:
+      "Conectando el territorio mediante inteligencia agropecuaria.",
+    url: "https://cernunnos.ai",
+    siteName: "Cernunnos AI",
+    locale: "es_AR",
+    type: "website",
+    images: [
+      {
+        url: "/brand/og-cover.png",
+        width: 1200,
+        height: 630,
+        alt: "Cernunnos AI",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cernunnos AI",
+    description:
+      "Conectando el territorio mediante inteligencia agropecuaria.",
+    images: ["/brand/og-cover.png"],
+  },
+  icons: {
+    icon: "/icon.png",
+    apple: "/icon.png",
+  },
 };
 
 export default function RootLayout({
