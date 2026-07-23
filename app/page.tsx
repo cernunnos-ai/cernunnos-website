@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-const GOOGLE_FORM_URL_PLACEHOLDER =
-  "https://docs.google.com/forms/d/e/GOOGLE_FORM_ID_PLACEHOLDER/viewform";
+const RESEARCH_FORM_URL =
+  "https://forms.gle/t7cmvioq3HJsrvuv9";
 
 const capabilities = [
   {
@@ -149,7 +149,7 @@ export default function Home() {
                 observación, diagnóstico y planificación agropecuaria.
               </p>
               <a
-                href={GOOGLE_FORM_URL_PLACEHOLDER}
+                href={RESEARCH_FORM_URL}
                 className="mt-10 inline-flex min-h-14 items-center rounded-[1px] border border-sprout bg-sprout px-6 py-4 text-base font-semibold tracking-[0.04em] text-background transition-colors hover:border-secondary hover:bg-secondary hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sprout"
               >
                 Participar de la investigación
